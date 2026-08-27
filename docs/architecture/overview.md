@@ -45,6 +45,8 @@ React Application
    v
 Backend Services
 
+```
+
 ## 4. Frontend Architecture
 
 The frontend will be organized into clear responsibilities:
@@ -98,6 +100,8 @@ src/
 ├── main.tsx
 └── index.css
 
+```
+
 ## 7. Authentication
 
 The MVP will include a dummy authentication flow for demonstrating
@@ -121,3 +125,41 @@ Authentication Context
     |
     v
 Protected Application Areas
+
+```
+
+## 8. Quality Strategy
+
+Quality will be enforced progressively throughout the project.
+
+### Static analysis
+
+ESLint will identify code-quality and common JavaScript/TypeScript
+issues.
+
+### Type safety
+
+TypeScript will provide static type checking.
+
+### Unit and component testing
+
+Vitest and React Testing Library will be introduced as application
+logic and components become sufficiently complex to benefit from
+automated tests.
+
+### End-to-end testing
+
+Playwright will be introduced to validate important user journeys.
+
+### Continuous Integration
+
+GitHub Actions will eventually automate:
+
+- dependency installation
+- linting
+- type checking
+- tests
+- production builds
+
+Pull requests will use these checks as quality gates before changes
+are promoted.
