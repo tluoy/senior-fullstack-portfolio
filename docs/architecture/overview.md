@@ -124,7 +124,7 @@ Authentication Context
     +-- logout()
     |
     v
-Protected Application Areas
+Client-side UI state
 
 ```
 
