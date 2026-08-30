@@ -1,4 +1,4 @@
-import { useEffect, useState, type ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 
 import { AuthContext } from "./AuthContext";
 import type { AuthContextValue, User } from "./auth.types";
@@ -12,14 +12,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
   const [user, setUser] = useState<User | null>(() => {
     return getStoredUser();
   });
-
-  useEffect(() => {
-    console.log("AuthProvider MOUNTED");
-
-    return () => {
-      console.log("AuthProvider UNMOUNTED");
-    };
-  }, []);
 
   const login = (email: string, password: string): boolean => {
     if (!email || !password) {
