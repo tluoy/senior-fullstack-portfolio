@@ -48,16 +48,13 @@ function MainLayout(): React.ReactElement {
           {isAuthenticated ? (
             <div className="flex items-center gap-4">
               <span className="text-sm text-slate-600">{user?.name}</span>
-              <NavLink
-                to="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  logout();
-                }}
-                className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium"
+              <button
+                type="button"
+                onClick={logout}
+                className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer"
               >
                 Logout
-              </NavLink>
+              </button>
             </div>
           ) : (
             <NavLink
