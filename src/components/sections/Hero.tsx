@@ -1,6 +1,6 @@
 import Button from "../ui/Button";
 
-function Hero() {
+function Hero(): React.ReactElement {
   return (
     <section
       aria-labelledby="hero-heading"
@@ -12,12 +12,12 @@ function Hero() {
 
       <h1
         id="hero-heading"
-        className="max-w-4xl text-5xl font-bold tracking-tight text-slate-950 sm:text-6xl lg:text-7xl"
+        className="mb-6 max-w-4xl text-5xl font-bold tracking-tight text-slate-800 sm:text-6xl lg:text-7xl"
       >
-        Titus A. Luyo
+        Titus Luoyang
       </h1>
 
-      <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600 sm:text-xl">
+      <p className="mb-8 max-w-3xl text-lg leading-8 text-slate-600 sm:text-xl">
         Senior software engineer with 13+ years of experience building
         enterprise-grade, scalable software solutions across enterprise systems,
         fintech, cloud-native platforms, and AI-powered applications.
@@ -25,7 +25,6 @@ function Hero() {
 
       <div className="flex flex-wrap gap-4">
         <Button to="/projects">View Projects</Button>
-
         <Button to="/contact" variant="secondary">
           Contact Me
         </Button>

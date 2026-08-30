@@ -1,17 +1,21 @@
-import { createBrowserRouter } from 'react-router-dom'
-import MainLayout from '../layouts/MainLayout'
-import HomePage from '../pages/HomePage'
-import AboutPage from '../pages/AboutPage'
-import ContactPage from '../pages/ContactPage'
-import ExperiencePage from '../pages/ExperiencePage'
-import LoginPage from '../pages/LoginPage'
-import NotFoundPage from '../pages/NotFoundPage'
-import ProjectsPage from '../pages/ProjectsPage'
-import SkillsPage from '../pages/SkillsPage'
+import { createBrowserRouter } from "react-router-dom";
+import MainLayout from "../layouts/MainLayout";
+import HomePage from "../pages/HomePage";
+import AboutPage from "../pages/AboutPage";
+import ContactPage from "../pages/ContactPage";
+import ExperiencePage from "../pages/ExperiencePage";
+import LoginPage from "../pages/LoginPage";
+import NotFoundPage from "../pages/NotFoundPage";
+import ProjectsPage from "../pages/ProjectsPage";
+import SkillsPage from "../pages/SkillsPage";
+
+import ProtectedRoute from "../components/auth/ProtectedRoute";
+import DashboardPage from "../pages/DashboardPage";
+import PublicOnlyRoute from "../components/auth/PublicOnlyRoute";
 
 export const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <MainLayout />,
     children: [
       {
@@ -19,33 +23,47 @@ export const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: 'about',
+        path: "about",
         element: <AboutPage />,
       },
       {
-        path: 'skills',
+        path: "skills",
         element: <SkillsPage />,
       },
       {
-        path: 'experience',
+        path: "experience",
         element: <ExperiencePage />,
       },
       {
-        path: 'projects',
+        path: "projects",
         element: <ProjectsPage />,
       },
       {
-        path: 'contact',
+        path: "contact",
         element: <ContactPage />,
       },
       {
-        path: 'login',
-        element: <LoginPage />,
+        element: <PublicOnlyRoute />,
+        children: [
+          {
+            path: "login",
+            element: <LoginPage />,
+          },
+        ],
       },
       {
-        path: '*',
+        element: <ProtectedRoute />,
+        children: [
+          {
+            path: "dashboard",
+            element: <DashboardPage />,
+          },
+        ],
+      },
+      {
+        path: "*",
         element: <NotFoundPage />,
       },
     ],
   },
-])
+]);
