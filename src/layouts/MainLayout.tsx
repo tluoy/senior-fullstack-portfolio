@@ -8,7 +8,10 @@ function MainLayout(): React.ReactElement {
     <div className="min-h-screen flex flex-col bg-linear-to-br from-slate-50 via-blue-50 to-indigo-50">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-lg border-b border-slate-200/50 shadow-sm">
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+        <nav
+          aria-label="Primary navigation"
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between"
+        >
           {/* Logo */}
           <div className="shrink-0">
             <strong className="text-2xl bg-linear-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent font-bold tracking-tight">
@@ -17,7 +20,7 @@ function MainLayout(): React.ReactElement {
           </div>
 
           {/* Navigation Links */}
-          <div className="hidden md:flex items-center gap-1">
+          <ul className="hidden md:flex items-center gap-1">
             {[
               { to: "/", label: "Home" },
               { to: "/about", label: "About" },
@@ -26,23 +29,24 @@ function MainLayout(): React.ReactElement {
               { to: "/projects", label: "Projects" },
               { to: "/contact", label: "Contact" },
             ].map((link) => (
-              <NavLink
-                key={link.to}
-                to={link.to}
-                className={({ isActive }) =>
-                  `relative px-4 py-2 text-sm font-medium transition-colors ${
-                    isActive
-                      ? "text-blue-600"
-                      : "text-slate-700 hover:text-blue-600"
-                  } after:absolute after:bottom-1 after:left-4 after:right-4 after:h-0.5 after:bg-linear-to-r after:from-blue-500 after:to-indigo-500 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 ${
-                    isActive ? "after:scale-x-100" : ""
-                  }`
-                }
-              >
-                {link.label}
-              </NavLink>
+              <li key={link.to}>
+                <NavLink
+                  to={link.to}
+                  className={({ isActive }) =>
+                    `relative px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 ${
+                      isActive
+                        ? "text-blue-600"
+                        : "text-slate-700 hover:text-blue-600"
+                    } after:absolute after:bottom-1 after:left-4 after:right-4 after:h-0.5 after:bg-linear-to-r after:from-blue-500 after:to-indigo-500 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 ${
+                      isActive ? "after:scale-x-100" : ""
+                    }`
+                  }
+                >
+                  {link.label}
+                </NavLink>
+              </li>
             ))}
-          </div>
+          </ul>
 
           {/* Login Button */}
           {isAuthenticated ? (
@@ -51,7 +55,7 @@ function MainLayout(): React.ReactElement {
               <button
                 type="button"
                 onClick={logout}
-                className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer"
+                className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
               >
                 Logout
               </button>
@@ -59,7 +63,7 @@ function MainLayout(): React.ReactElement {
           ) : (
             <NavLink
               to="/login"
-              className="rounded-lg bg-slate-950 px-4 py-2 text-sm font-medium text-white"
+              className="rounded-lg bg-slate-950 px-4 py-2 text-sm font-medium text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
             >
               Login
             </NavLink>
