@@ -142,6 +142,7 @@ function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
+          aria-busy={isSubmitting}
           className="rounded-lg bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-950 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
         >
           {isSubmitting ? "Sending..." : "Send Message"}
@@ -152,6 +153,7 @@ function ContactForm() {
         <p
           className="mt-6 rounded-lg bg-slate-100 px-4 py-3 text-sm text-slate-700"
           role="status"
+          aria-live="polite"
         >
           Thanks for reaching out. Your message has been received.
         </p>
