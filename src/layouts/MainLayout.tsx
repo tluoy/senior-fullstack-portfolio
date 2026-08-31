@@ -92,7 +92,7 @@ function MainLayout(): React.ReactElement {
             </div>
 
             {/* Quick Links */}
-            <div>
+            <nav aria-label="Footer navigation">
               <h4 className="font-semibold text-white mb-4">Quick Links</h4>
               <ul className="space-y-2">
                 {[
@@ -110,7 +110,7 @@ function MainLayout(): React.ReactElement {
                   </li>
                 ))}
               </ul>
-            </div>
+            </nav>
 
             {/* Contact Info */}
             <div>
