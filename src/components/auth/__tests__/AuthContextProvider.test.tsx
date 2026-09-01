@@ -116,4 +116,41 @@ describe("AuthProvider", () => {
       "persisted@example.com",
     );
   });
+
+  it("ignores malformed persisted authentication data", () => {
+    localStorage.setItem("portfolio_user", "{invalid-json");
+
+    render(
+      <AuthProvider>
+        <TestConsumer />
+      </AuthProvider>,
+    );
+
+    expect(screen.getByTestId("authenticated")).toHaveTextContent(
+      "unauthenticated",
+    );
+
+    expect(screen.getByTestId("user-email")).toHaveTextContent("no user");
+  });
+
+  it("ignores invalid persisted user data", () => {
+    localStorage.setItem(
+      "portfolio_user",
+      JSON.stringify({
+        email: "test@example.com",
+      }),
+    );
+
+    render(
+      <AuthProvider>
+        <TestConsumer />
+      </AuthProvider>,
+    );
+
+    expect(screen.getByTestId("authenticated")).toHaveTextContent(
+      "unauthenticated",
+    );
+
+    expect(screen.getByTestId("user-email")).toHaveTextContent("no user");
+  });
 });
