@@ -4,6 +4,7 @@ import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 import ProtectedRoute from "../components/auth/ProtectedRoute";
 import PublicOnlyRoute from "../components/auth/PublicOnlyRoute";
+import PageLoader from "../components/ui/PageLoader";
 
 import {
   HomePage,
@@ -21,7 +22,7 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<PageLoader />}>
         <MainLayout />
       </Suspense>
     ),
