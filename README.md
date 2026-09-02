@@ -238,7 +238,7 @@ Install:
 Clone the repository and enter the project directory:
 
 ```bash
-git clone git@github-tluoy:tluoy/senior-fullstack-portfolio.git
+git clone https://senior-fullstack-portfolio.git
 cd senior-fullstack-portfolio
 ```
 

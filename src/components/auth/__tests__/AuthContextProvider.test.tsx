@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
 
 import { AuthProvider } from "../../../features/auth/AuthContextProvider";
 import { useAuth } from "../../../features/auth/useAuth";
@@ -30,6 +30,14 @@ function TestConsumer() {
 }
 
 describe("AuthProvider", () => {
+  beforeEach(() => {
+    localStorage.clear();
+  });
+
+  afterEach(() => {
+    localStorage.clear();
+  });
+  
   it("authenticates and persists the user when login succeeds", async () => {
     const { userEvent } = await import("@testing-library/user-event");
 
