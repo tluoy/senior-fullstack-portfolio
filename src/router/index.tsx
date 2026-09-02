@@ -1,22 +1,31 @@
+import { Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
-import MainLayout from "../layouts/MainLayout";
-import HomePage from "../pages/HomePage";
-import AboutPage from "../pages/AboutPage";
-import ContactPage from "../pages/ContactPage";
-import ExperiencePage from "../pages/ExperiencePage";
-import LoginPage from "../pages/LoginPage";
-import NotFoundPage from "../pages/NotFoundPage";
-import ProjectsPage from "../pages/ProjectsPage";
-import SkillsPage from "../pages/SkillsPage";
 
+import MainLayout from "../layouts/MainLayout";
 import ProtectedRoute from "../components/auth/ProtectedRoute";
-import DashboardPage from "../pages/DashboardPage";
 import PublicOnlyRoute from "../components/auth/PublicOnlyRoute";
+import PageLoader from "../components/ui/PageLoader";
+
+import {
+  HomePage,
+  AboutPage,
+  SkillsPage,
+  ExperiencePage,
+  ProjectsPage,
+  ContactPage,
+  LoginPage,
+  DashboardPage,
+  NotFoundPage,
+} from "./lazyPages";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout />,
+    element: (
+      <Suspense fallback={<PageLoader />}>
+        <MainLayout />
+      </Suspense>
+    ),
     children: [
       {
         index: true,

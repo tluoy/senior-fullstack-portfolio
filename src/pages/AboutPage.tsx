@@ -14,7 +14,7 @@ function AboutPage() {
 
           <h1
             id="about-heading"
-            className="mt-3 text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl"
+            className="mt-4 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
           >
             Senior fullstack engineer focused on building reliable software.
           </h1>
@@ -48,7 +48,7 @@ function AboutPage() {
 
               <h2
                 id="approach-heading"
-                className="mt-3 text-3xl font-bold tracking-tight text-slate-950"
+                className="mt-4 text-3xl font-bold tracking-tight text-slate-900"
               >
                 Think beyond the code.
               </h2>
@@ -84,13 +84,13 @@ function AboutPage() {
 
           <h2
             id="value-heading"
-            className="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl"
+            className="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl"
           >
             Technical depth with a product mindset.
           </h2>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
-            <article className="rounded-2xl border border-slate-200 p-6">
+            <article className="rounded-2xl border border-slate-200 bg-white p-6 transition-all duration-200 hover:border-slate-300 hover:shadow-md focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-slate-900">
               <h3 className="text-lg font-semibold text-slate-950">
                 Fullstack perspective
               </h3>
@@ -100,7 +100,7 @@ function AboutPage() {
               </p>
             </article>
 
-            <article className="rounded-2xl border border-slate-200 p-6">
+            <article className="rounded-2xl border border-slate-200 bg-white p-6 transition-all duration-200 hover:border-slate-300 hover:shadow-md focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-slate-900">
               <h3 className="text-lg font-semibold text-slate-950">
                 Scalable thinking
               </h3>
@@ -110,7 +110,7 @@ function AboutPage() {
               </p>
             </article>
 
-            <article className="rounded-2xl border border-slate-200 p-6">
+            <article className="rounded-2xl border border-slate-200 bg-white p-6 transition-all duration-200 hover:border-slate-300 hover:shadow-md focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-slate-900">
               <h3 className="text-lg font-semibold text-slate-950">
                 Quality mindset
               </h3>
@@ -120,7 +120,7 @@ function AboutPage() {
               </p>
             </article>
 
-            <article className="rounded-2xl border border-slate-200 p-6">
+            <article className="rounded-2xl border border-slate-200 bg-white p-6 transition-all duration-200 hover:border-slate-300 hover:shadow-md focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-slate-900">
               <h3 className="text-lg font-semibold text-slate-950">
                 Collaboration
               </h3>

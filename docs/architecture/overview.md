@@ -111,7 +111,6 @@ The authentication architecture will use React Context to provide
 authentication state to components that require it.
 
 The initial flow will be:
-
 ```text
 Login Page
     |
@@ -125,6 +124,50 @@ Authentication Context
     |
     v
 Client-side UI state
+    |
+    v
+localStorage
+
+```
+
+### Authentication Security Boundary
+
+The authentication flow is intentionally a demonstration-only
+implementation for the portfolio MVP.
+The current implementation does not provide production-grade
+authentication or authorization. The user state is persisted in
+browser localStorage and must therefore not be treated as a secure
+authentication credential or trusted authorization mechanism.
+The login form uses client-side validation to ensure that submitted
+credentials meet the required input format. This validation does not
+authenticate a user against a backend identity system.
+Protected routes demonstrate client-side route protection concepts,
+but they do not replace server-side authorization.
+A production implementation would require a backend or identity
+provider responsible for authentication and authorization, together
+with an appropriate secure session-management strategy.
+The portfolio MVP deliberately keeps this implementation simple so
+that authentication concepts can be demonstrated without introducing
+a production identity infrastructure that is outside the scope of the
+project.
+
+
+### Why this is the right documentation change
+
+It accurately describes what we've actually built:
+
+```text
+Login form
+   ↓
+Zod validation
+   ↓
+Dummy login
+   ↓
+React Context
+   ↓
+localStorage
+   ↓
+ProtectedRoute
 
 ```
 

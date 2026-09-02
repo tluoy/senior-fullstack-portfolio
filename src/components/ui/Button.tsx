@@ -16,10 +16,11 @@ function Button({
 }: ButtonProps) {
   const className = [
     'inline-flex items-center justify-center rounded-lg px-5 py-3',
-    'font-medium transition-colors',
+    'font-medium transition-all duration-200',
+    'focus-visible:outline-2 focus-visible:outline-offset-2',
     variant === 'primary'
-      ? 'bg-slate-900 text-white hover:bg-slate-700'
-      : 'border border-slate-300 text-slate-900 hover:bg-slate-100',
+      ? 'bg-slate-900 text-white hover:bg-slate-800 active:bg-slate-950 focus-visible:outline-slate-900'
+      : 'border border-slate-300 text-slate-900 hover:bg-slate-50 active:bg-slate-100 focus-visible:outline-slate-900',
   ].join(' ')
 
   if (to) {
