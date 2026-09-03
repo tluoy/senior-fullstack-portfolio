@@ -1,13 +1,15 @@
 import { Outlet, NavLink } from "react-router-dom";
 import { useAuth } from "../features/auth/useAuth";
+import { useTheme } from "../features/theme/useTheme";
 
 function MainLayout(): React.ReactElement {
   const { isAuthenticated, user, logout } = useAuth();
+  const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className="min-h-screen flex flex-col bg-linear-to-br from-slate-50 via-blue-50 to-indigo-50">
+    <div className="min-h-screen flex flex-col bg-linear-to-br from-slate-50 via-blue-50 to-indigo-50 text-slate-900 transition-colors duration-300 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 dark:text-slate-100">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-lg border-b border-slate-200/50 shadow-sm">
+      <header className="sticky top-0 z-50 border-b border-slate-200/50 bg-white/95 shadow-sm backdrop-blur-lg transition-colors duration-300 dark:border-slate-700/50 dark:bg-slate-950/95">
         <nav
           aria-label="Primary navigation"
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between"
@@ -36,7 +38,7 @@ function MainLayout(): React.ReactElement {
                     `relative px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 ${
                       isActive
                         ? "text-blue-600"
-                        : "text-slate-700 hover:text-blue-600"
+                        : "text-slate-700 hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400"
                     } after:absolute after:bottom-1 after:left-4 after:right-4 after:h-0.5 after:bg-linear-to-r after:from-blue-500 after:to-indigo-500 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 ${
                       isActive ? "after:scale-x-100" : ""
                     }`
@@ -48,14 +50,27 @@ function MainLayout(): React.ReactElement {
             ))}
           </ul>
 
+          <button
+            type="button"
+            onClick={toggleTheme}
+            aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
+            aria-pressed={theme === "dark"}
+            className="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+          >
+            <span aria-hidden="true">{theme === "light" ? "🌙" : "☀️"}</span>
+            <span className="sr-only">
+              {theme === "light" ? "Dark mode" : "Light mode"}
+            </span>
+          </button>
+
           {/* Login Button */}
           {isAuthenticated ? (
             <div className="flex items-center gap-4">
-              <span className="text-sm text-slate-600">{user?.name}</span>
+              <span className="text-sm text-slate-600 dark:text-slate-300">{user?.name}</span>
               <button
                 type="button"
                 onClick={logout}
-                className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+                className="cursor-pointer rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800"
               >
                 Logout
               </button>
@@ -63,7 +78,7 @@ function MainLayout(): React.ReactElement {
           ) : (
             <NavLink
               to="/login"
-              className="rounded-lg bg-slate-950 px-4 py-2 text-sm font-medium text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+              className="rounded-lg bg-slate-950 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200"
             >
               Login
             </NavLink>

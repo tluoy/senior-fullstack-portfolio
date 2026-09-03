@@ -76,18 +76,18 @@ function SkillsPage() {
         className="mx-auto max-w-6xl px-6 py-20"
       >
         <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-widest text-slate-500">
+          <p className="text-sm font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400">
             Technical Skills
           </p>
 
           <h1
             id="skills-page-heading"
-            className="mt-3 text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl"
+            className="mt-3 text-4xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl"
           >
             A broad engineering toolkit built for modern software systems.
           </h1>
 
-          <p className="mt-6 text-lg leading-8 text-slate-600">
+          <p className="mt-6 text-lg leading-8 text-slate-500 dark:text-slate-400">
             My technical experience spans frontend and backend development,
             cloud infrastructure, DevOps, data platforms, and AI-powered
             applications. I focus on choosing the right tools for the problem
@@ -99,13 +99,13 @@ function SkillsPage() {
           {skillGroups.map((group) => (
             <article
               key={group.title}
-              className="rounded-2xl border border-slate-200 p-6"
+              className="group rounded-2xl border border-slate-200 bg-slate-200 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900 dark:hover:border-blue-700"
             >
-              <h2 className="text-2xl font-semibold text-slate-950">
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">
                 {group.title}
               </h2>
 
-              <p className="mt-3 leading-7 text-slate-600">
+              <p className="mt-3 leading-7 text-slate-600 dark:text-slate-300">
                 {group.description}
               </p>
 
@@ -113,7 +113,7 @@ function SkillsPage() {
                 {group.skills.map((skill) => (
                   <li
                     key={skill}
-                    className="rounded-full bg-slate-100 px-3 py-1.5 text-sm font-medium text-slate-700"
+                    className="rounded-full bg-slate-100 px-3 py-1.5 text-sm font-medium text-slate-700 dark:bg-slate-800 dark:text-slate-200"
                   >
                     {skill}
                   </li>
@@ -126,22 +126,22 @@ function SkillsPage() {
 
       <section
         aria-labelledby="engineering-principles-heading"
-        className="border-y border-slate-200 bg-slate-50"
+        className="border-y border-slate-200 bg-slate-50 dark:bg-slate-900"
       >
         <div className="mx-auto max-w-6xl px-6 py-20">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-widest text-slate-500">
+            <p className="text-sm font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400">
               Beyond Technologies
             </p>
 
             <h2
               id="engineering-principles-heading"
-              className="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl"
+              className="mt-3 text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-4xl"
             >
               Engineering is about more than knowing a technology.
             </h2>
 
-            <p className="mt-5 text-lg leading-8 text-slate-600">
+            <p className="mt-5 text-lg leading-8 text-slate-600 dark:text-slate-300">
               Strong software engineering also requires architectural thinking,
               problem solving, communication, collaboration, and a commitment
               to quality throughout the development lifecycle.
@@ -149,31 +149,31 @@ function SkillsPage() {
           </div>
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <article className="rounded-2xl border border-slate-200 bg-white p-6">
-              <h3 className="text-lg font-semibold text-slate-950">
+            <article className="group rounded-2xl border border-slate-200 bg-slate-200 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900 dark:hover:border-blue-700">
+              <h3 className="text-lg font-semibold text-slate-950 dark:text-white">
                 Architecture
               </h3>
-              <p className="mt-2 leading-7 text-slate-600">
+              <p className="mt-2 leading-7 text-slate-600 dark:text-slate-300">
                 Designing systems that are maintainable, scalable, and aligned
                 with business requirements.
               </p>
             </article>
 
-            <article className="rounded-2xl border border-slate-200 bg-white p-6">
-              <h3 className="text-lg font-semibold text-slate-950">
+            <article className="group rounded-2xl border border-slate-200 bg-slate-200 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900 dark:hover:border-blue-700">
+              <h3 className="text-lg font-semibold text-slate-950 dark:text-white">
                 Problem Solving
               </h3>
-              <p className="mt-2 leading-7 text-slate-600">
+              <p className="mt-2 leading-7 text-slate-600 dark:text-slate-300">
                 Breaking complex requirements into practical technical
                 solutions and delivering them incrementally.
               </p>
             </article>
 
-            <article className="rounded-2xl border border-slate-200 bg-white p-6">
-              <h3 className="text-lg font-semibold text-slate-950">
+            <article className="group rounded-2xl border border-slate-200 bg-slate-200 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900 dark:hover:border-blue-700">
+              <h3 className="text-lg font-semibold text-slate-950 dark:text-white">
                 Quality
               </h3>
-              <p className="mt-2 leading-7 text-slate-600">
+              <p className="mt-2 leading-7 text-slate-600 dark:text-slate-300">
                 Using testing, code review, automation, security, and
                 continuous improvement to build confidence in software.
               </p>

@@ -10,12 +10,12 @@ function FeaturedProjects() {
       <div className="max-w-3xl">
         <h2
           id="projects-heading"
-          className="text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl"
+          className="text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-4xl"
         >
           Featured Projects
         </h2>
 
-        <p className="mt-4 text-lg leading-8 text-slate-600">
+        <p className="mt-4 text-lg leading-8 text-slate-600 dark:text-slate-300">
           A selection of full-stack, cloud, fintech, and AI-focused
           applications demonstrating modern engineering practices.
         </p>

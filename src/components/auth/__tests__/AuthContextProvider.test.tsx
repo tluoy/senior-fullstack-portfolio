@@ -66,7 +66,7 @@ describe("AuthProvider", () => {
     expect(localStorage.getItem("portfolio_user")).toBe(
       JSON.stringify({
         email: "test@example.com",
-        name: "Titus Luoyang",
+        name: "Titus Atuto",
       }),
     );
   });
