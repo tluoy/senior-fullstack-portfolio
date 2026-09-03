@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   font-family:
     Inter,
@@ -24,9 +26,16 @@ html {
 body {
   margin: 0;
   min-width: 320px;
+  background-color: #f8fafc;
+  color: #0f172a;
 }
 
 button,
 a {
   font: inherit;
+}
+
+.dark body {
+  background-color: #020617;
+  color: #f8fafc;
 }

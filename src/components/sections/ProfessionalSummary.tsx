@@ -6,11 +6,11 @@ function ProfessionalSummary() {
     >
       <h2
         id="summary-heading"
-        className="text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl"
+        className="text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-4xl"
       >
         Professional Summary
       </h2>
-      <div className="mt-8 max-w-3xl space-y-5 text-lg leading-8 text-slate-600">
+      <div className="mt-8 max-w-3xl space-y-5 text-lg leading-8 text-slate-600 dark:text-slate-300">
         <p>
           I design, develop, and maintain enterprise software solutions with a
           focus on scalability, maintainability, performance, and real-world
