@@ -4,15 +4,15 @@ function ContactPage() {
   return (
     <main className="mx-auto max-w-6xl px-6 py-20">
       <header className="max-w-3xl">
-        <p className="text-sm font-semibold uppercase tracking-wider text-slate-500">
+        <p className="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
           Contact
         </p>
 
-        <h1 className="mt-3 text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl">
+        <h1 className="mt-3 text-4xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl">
           Let's start a conversation.
         </h1>
 
-        <p className="mt-6 text-lg leading-8 text-slate-600">
+        <p className="mt-6 text-lg leading-8 text-slate-600 dark:text-slate-300">
           Whether you have a project in mind, are looking for a senior
           full-stack engineer, or simply want to connect, I'd love to hear
           from you.

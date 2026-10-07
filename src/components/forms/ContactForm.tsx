@@ -52,7 +52,7 @@ function ContactForm() {
         <div>
           <label
             htmlFor="name"
-            className="block text-sm font-medium text-slate-900"
+            className="block text-sm font-medium text-slate-900 dark:text-slate-200"
           >
             Name
           </label>
@@ -75,7 +75,7 @@ function ContactForm() {
         <div>
           <label
             htmlFor="email"
-            className="block text-sm font-medium text-slate-900"
+            className="block text-sm font-medium text-slate-900 dark:text-slate-200"
           >
             Email
           </label>
@@ -98,7 +98,7 @@ function ContactForm() {
         <div>
           <label
             htmlFor="subject"
-            className="block text-sm font-medium text-slate-900"
+            className="block text-sm font-medium text-slate-900 dark:text-slate-200"
           >
             Subject
           </label>
@@ -120,7 +120,7 @@ function ContactForm() {
         <div>
           <label
             htmlFor="message"
-            className="block text-sm font-medium text-slate-900"
+            className="block text-sm font-medium text-slate-900 dark:text-slate-200"
           >
             Message
           </label>
@@ -143,7 +143,7 @@ function ContactForm() {
           type="submit"
           disabled={isSubmitting}
           aria-busy={isSubmitting}
-          className="rounded-lg bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-950 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+          className="rounded-lg bg-gray-300 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-950 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-slate-800 dark:text-white dark:hover:bg-slate-800 dark:focus:ring-white dark:focus:ring-offset-slate-950"
         >
           {isSubmitting ? "Sending..." : "Send Message"}
         </button>
@@ -151,7 +151,7 @@ function ContactForm() {
 
       {isSubmitted && (
         <p
-          className="mt-6 rounded-lg bg-slate-100 px-4 py-3 text-sm text-slate-700"
+          className="mt-6 rounded-lg bg-slate-100 px-4 py-3 text-sm text-slate-700 dark:text-slate-200"
           role="status"
           aria-live="polite"
         >

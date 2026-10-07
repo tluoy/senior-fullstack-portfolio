@@ -62,18 +62,18 @@ function ExperiencePage() {
         className="mx-auto max-w-6xl px-6 py-20"
       >
         <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
             Experience
           </p>
 
           <h1
             id="experience-heading"
-            className="mt-3 text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl"
+            className="mt-3 text-4xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl"
           >
             13+ years building real-world software systems.
           </h1>
 
-          <p className="mt-6 text-lg leading-8 text-slate-600">
+          <p className="mt-6 text-lg leading-8 text-slate-600 dark:text-slate-300">
             My experience spans enterprise software, fintech, ERP and CRM
             systems, cloud-native applications, software architecture,
             integrations, and DevOps.
@@ -88,25 +88,25 @@ function ExperiencePage() {
             >
               <div className="grid gap-8 lg:grid-cols-[220px_1fr]">
                 <div>
-                  <p className="text-sm font-semibold text-slate-500">
+                  <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">
                     {experience.period}
                   </p>
 
-                  <p className="mt-2 text-sm text-slate-500">
+                  <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
                     {experience.location}
                   </p>
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold tracking-tight text-slate-950">
+                  <h2 className="text-2xl font-bold tracking-tight text-slate-950 dark:text-white">
                     {experience.role}
                   </h2>
 
-                  <p className="mt-1 text-lg font-medium text-slate-700">
+                  <p className="mt-1 text-lg font-medium text-slate-700 dark:text-slate-300">
                     {experience.company}
                   </p>
 
-                  <p className="mt-5 max-w-3xl text-base leading-7 text-slate-600">
+                  <p className="mt-5 max-w-3xl text-base leading-7 text-slate-600 dark:text-slate-300">
                     {experience.summary}
                   </p>
 
@@ -114,11 +114,11 @@ function ExperiencePage() {
                     {experience.achievements.map((achievement) => (
                       <li
                         key={achievement}
-                        className="flex gap-3 text-base leading-7 text-slate-600"
+                        className="flex gap-3 text-base leading-7 text-slate-600 dark:text-slate-300"
                       >
                         <span
                           aria-hidden="true"
-                          className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400"
+                          className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400 dark:bg-slate-500"
                         />
 
                         <span>{achievement}</span>
@@ -130,7 +130,7 @@ function ExperiencePage() {
                     {experience.technologies.map((technology) => (
                       <span
                         key={technology}
-                        className="rounded-full bg-slate-100 px-3 py-1.5 text-sm text-slate-700"
+                        className="rounded-full bg-slate-100 px-3 py-1.5 text-sm text-slate-700 dark:bg-slate-800 dark:text-slate-200"
                       >
                         {technology}
                       </span>

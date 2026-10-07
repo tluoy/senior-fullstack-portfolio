@@ -66,12 +66,12 @@ function CoreSkills() {
       <div className="max-w-3xl">
         <h2
           id="skills-heading"
-          className="text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl"
+          className="text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-4xl"
         >
           Core Technical Skills
         </h2>
 
-        <p className="mt-4 text-lg leading-8 text-slate-600">
+        <p className="mt-4 text-lg leading-8 text-slate-600 dark:text-slate-300">
           A broad engineering toolkit spanning modern frontend
           development, backend systems, cloud infrastructure,
           data platforms, and AI-powered applications.
@@ -82,9 +82,9 @@ function CoreSkills() {
         {skillGroups.map((group) => (
           <article
             key={group.title}
-            className="rounded-2xl border border-slate-200 p-6"
+            className="group rounded-2xl border border-slate-200 bg-slate-200 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900 dark:hover:border-blue-700"
           >
-            <h3 className="text-xl font-semibold text-slate-950">
+            <h3 className="text-xl font-semibold tracking-tight text-slate-950 dark:text-white">
               {group.title}
             </h3>
 
@@ -92,7 +92,7 @@ function CoreSkills() {
               {group.skills.map((skill) => (
                 <li
                   key={skill}
-                  className="rounded-full bg-slate-100 px-3 py-1.5 text-sm text-slate-700"
+                  className="rounded-full bg-slate-100 px-3 py-1.5 text-sm font-medium text-slate-700 dark:bg-slate-800 dark:text-slate-200"
                 >
                   {skill}
                 </li>

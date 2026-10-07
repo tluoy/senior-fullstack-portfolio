@@ -20,7 +20,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
     const loggedInUser: User = {
       email,
-      name: "Titus Luoyang",
+      name: "Titus Atuto",
     };
 
     saveStoredUser(loggedInUser);

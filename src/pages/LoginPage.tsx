@@ -9,7 +9,7 @@ function LoginPage(): React.ReactElement {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const from = location.state?.from?.pathname || '/dashboard'
+  const from = location.state?.from?.pathname || "/dashboard";
 
   const {
     register,
@@ -17,7 +17,7 @@ function LoginPage(): React.ReactElement {
     formState: { errors },
   } = useForm<LoginFormData>({
     resolver: zodResolver(loginSchema),
-    mode: 'onBlur',
+    mode: "onBlur",
   });
 
   const onSubmit = (data: LoginFormData) => {
@@ -30,10 +30,12 @@ function LoginPage(): React.ReactElement {
 
   return (
     <main className="mx-auto max-w-md px-6 py-20">
-      <div className="rounded-2xl border border-slate-200 p-8">
-        <h1 className="text-3xl font-bold text-slate-950">Sign in</h1>
+      <div className="rounded-2xl border border-slate-200 p-8 dark:border-slate-700 dark:bg-slate-900">
+        <h1 className="text-3xl font-bold text-slate-950 dark:text-white">
+          Sign in
+        </h1>
 
-        <p className="mt-2 text-slate-600">
+        <p className="mt-2 text-slate-600 dark:text-slate-300">
           Demo authentication for the portfolio application.
         </p>
 
@@ -41,7 +43,7 @@ function LoginPage(): React.ReactElement {
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-slate-700"
+              className="block text-sm font-medium text-slate-700 dark:text-slate-200"
             >
               Email
             </label>
@@ -51,8 +53,10 @@ function LoginPage(): React.ReactElement {
               type="email"
               autoComplete="email"
               {...register("email")}
-              className={`mt-2 w-full rounded-lg border px-4 py-3 ${
-                errors.email ? 'border-red-500' : 'border-slate-300'
+              className={`mt-2 w-full rounded-lg border bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-950 focus:ring-offset-2 dark:bg-slate-950 dark:text-slate-100 dark:placeholder:text-slate-500 dark:focus:ring-white dark:focus:ring-offset-slate-950 ${
+                errors.email
+                  ? "border-red-500"
+                  : "border-slate-300 dark:border-slate-600"
               }`}
             />
 
@@ -66,7 +70,7 @@ function LoginPage(): React.ReactElement {
           <div>
             <label
               htmlFor="password"
-              className="block text-sm font-medium text-slate-700"
+              className="block text-sm font-medium text-slate-700 dark:text-slate-200"
             >
               Password
             </label>
@@ -76,8 +80,10 @@ function LoginPage(): React.ReactElement {
               type="password"
               autoComplete="current-password"
               {...register("password")}
-              className={`mt-2 w-full rounded-lg border px-4 py-3 ${
-                errors.password ? 'border-red-500' : 'border-slate-300'
+              className={`mt-2 w-full rounded-lg border bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-950 focus:ring-offset-2 dark:bg-slate-950 dark:text-slate-100 dark:placeholder:text-slate-500 dark:focus:ring-white dark:focus:ring-offset-slate-950 ${
+                errors.password
+                  ? "border-red-500"
+                  : "border-slate-300 dark:border-slate-600"
               }`}
             />
 
@@ -90,7 +96,7 @@ function LoginPage(): React.ReactElement {
 
           <button
             type="submit"
-            className="w-full rounded-lg bg-slate-950 px-5 py-3 font-semibold text-white"
+            className="w-full rounded-lg bg-white px-5 py-3 font-semibold text-slate-950 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-950 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-slate-950 dark:text-white dark:hover:bg-slate-800 dark:focus:ring-white dark:focus:ring-offset-slate-950"
           >
             Sign in
           </button>

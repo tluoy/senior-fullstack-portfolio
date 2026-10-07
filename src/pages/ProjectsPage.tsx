@@ -5,15 +5,15 @@ function ProjectsPage() {
   return (
     <main className="mx-auto max-w-6xl px-6 py-20">
       <div className="max-w-3xl">
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
+        <p className="text-sm font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400">
           Projects
         </p>
 
-        <h1 className="mt-3 text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl">
+        <h1 className="mt-3 text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl dark:text-white">
           Selected engineering projects
         </h1>
 
-        <p className="mt-6 text-lg leading-8 text-slate-600">
+        <p className="mt-6 text-lg leading-8 text-slate-600 dark:text-slate-300">
           A selection of projects demonstrating full-stack engineering,
           cloud architecture, modern application development, and
           AI-powered solutions.
